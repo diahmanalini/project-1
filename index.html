@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image SlideShow</title>
+  <link href='/style.css' rel='stylesheet'>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <h1>Manalini Cake</h1>
+
+    <div class="slideshow-containet">
+      <div class="slide fade">
+      <img src="./image/pexels-valeriya-14107.jpg" atl="slider 1">
+    </div>
+
+    <div class="slide fade">
+      <img src="./image/image/pexels-ella-olsson-572949-3026803.jpg" alt="slider 2">
+    </div>
+
+    <div class="slide fade">
+      <img src="./image/image/pexels-suzyhazelwood-1126359.jpg" alt="slider 3">
+    </div>
+
+    <div class="slide fade">
+      <img src="./image/image/pexels-valeriya-827513.jpg" alt="slider 4">
+    </div>
+
+  </div>
+
+  <script defer type="text/javascript" src="/main.js"></script>
+  <script>
+    var slideIndex = 1
+    SlideShow();
+
+    function SlideShow(){
+      var i
+      var sd = document.getElementsByClassName("slide")
+      console.log("JumlahSlide= "+ sd.length)
+      for(i=0; i<sd.length; i++){
+        sd[i].style.display = "none"
+      }
+      if(slideIndex>sd.length){
+        slideIndex = 1
+      }
+      sd[slideIndex-1].style.display="block"
+      slideIndex++
+      setTimeout(SlideShow,2000)
+
+    }
+  </script>
+</body>
+</html>
